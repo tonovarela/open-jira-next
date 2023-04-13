@@ -15,8 +15,19 @@ export const lightTheme= createTheme({
     },
     error:{
       main:red.A400
-    },    
+    },      
   },
+  components:{
+    MuiAppBar:{
+      defaultProps:{},
+      styleOverrides:{
+        root:{
+        
+        }
+      }
+    }
+
+  }
   
 })
 
