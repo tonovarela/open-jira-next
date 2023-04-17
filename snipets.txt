@@ -1,4 +1,36 @@
 
+//ts
+
+
+"React Reducer": {
+        "prefix": "reactContext-reducer",
+        "body": [
+    "",
+    "import { ${1:Name}State } from './' ;",
+    "",
+    "type ${1:Name}ActionType = { type: '[${1:Name}] - ${2:ActionName}' }",    
+    "",
+    "export const ${1:Name}Reducer = (state: ${1:Name}State, action: ${1:Name}ActionType): ${1:Name}State => {",
+    "",
+    "    switch (action.type) {",
+    "        case '[${1:Name}] - ${2:ActionName}':",
+    "            return {",
+    "                ...state,",
+    "            };",    
+    "",
+    "        default:",
+    "            return state;",
+    "    }",
+    "",
+    "",
+    "}",
+    
+        ],
+        "description": "React custom reducer"
+    },
+
+
+/tsx
 "React Context": {
 	"prefix": "reactContext",
 	"body": [
@@ -11,38 +43,35 @@
 "",
 "export const ${1:Name}Context = createContext({} as ContextProps);"
 	],
-	"description": "Log output to console"
+	"description": "Crea un archivo de contexto para React"
 },
 "React Provider":{
 	"prefix": "reactProvider",
     "body": [
 "import { FC, useReducer } from 'react'",
-"import { UIContext } from './UIContext'",
-"import { uiReducer } from './UIReducer'",
+"import { ${1:Name}Context } from './${1:Name}Context'",
+"import { ${1:Name}Reducer } from './${1:Name}Reducer'",
 "",
-"export interface UIState {",
+"export interface ${1:Name}State {",
 "    sideMenuOpen: boolean",
 "}",
-"export const UI_initialState: UIState = {",
+"export const ${1:Name}_initialState: ${1:Name}State = {",
 "    sideMenuOpen: false",
 "}",
 "",
-"interface PropsUIProvider {",
+"interface Props${1:Name}Provider {",
 "    children: React.ReactNode",
 "}",
 "",
-"  export const UIProvider: FC<PropsUIProvider> = ({ children }) => {",
-"    const [state, dispatch] = useReducer(uiReducer, UI_initialState)",
+"  export const ${1:Name}Provider: FC<Props${1:Name}Provider> = ({ children }) => {",
+"    const [state, dispatch] = useReducer(${1:Name}Reducer, ${1:Name}_initialState)",
 "",
 "   return (",
-"        <UIContext.Provider value={{ sideMenuOpen: false }}>",
+"        <${1:Name}Context.Provider value={{ sideMenuOpen: false }}>",
 "        {children}",
-"        </UIContext.Provider>",
+"        </${1:Name}Context.Provider>",
     ")",
 "}"
 
 	]	
-}
-
-
 }
