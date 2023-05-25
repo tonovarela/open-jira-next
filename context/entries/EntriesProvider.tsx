@@ -10,19 +10,19 @@ export const Entries_initialState: EntriesState = {
     entries: [
         {
             _id: uuidv4(),
-            description: "varela1",
+            description: "Pendiente varela1",
             status: "pending",
             createdAt: Date.now()
         },
         {
             _id: uuidv4(),
-            description: "Varela2",
+            description: "In progress Varela2",
             status: "in-progress",
             createdAt: Date.now()-100000
         },
         {
             _id: uuidv4(),
-            description: "varela3",
+            description: "Terminado varela3",
             status: "finished",
             createdAt: Date.now()-500000
         }
