@@ -8,6 +8,7 @@ interface Props {
 }
 
 export const Layout:FC<Props> = ({title="OpenJira",children}) => {
+  console.log(title);
   return (
     <Box sx={{ flexFlow:1}}>
         <Head>
